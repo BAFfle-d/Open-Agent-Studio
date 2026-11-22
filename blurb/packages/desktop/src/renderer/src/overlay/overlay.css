@@ -1,0 +1,19 @@
+html, body, #root { margin: 0; width: 100%; height: 100%; background: transparent !important; overflow: hidden; }
+body { font-family: ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, sans-serif; user-select: none; }
+.overlay-root { position: fixed; inset: 0; }
+.overlay-canvas { position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; }
+.radial { position: absolute; width: 0; height: 0; }
+.radial-btn {
+  position: absolute; left: -22px; top: -22px; width: 44px; height: 44px; border-radius: 50%;
+  border: 2px solid #2a1f3a; background: #fffaf2; font-size: 20px; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35); animation: pop 0.16s ease-out both;
+}
+.radial-btn:hover, .radial-btn:focus-visible { background: #ffe3ec; outline: none; transform-origin: center; }
+@keyframes pop { from { opacity: 0; scale: 0.4; } }
+.quick-chat {
+  position: absolute; transform: translateX(-50%); display: flex; gap: 6px; padding: 6px;
+  background: #fffaf2; border: 2.5px solid #2a1f3a; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+.quick-chat input { width: 260px; border: none; outline: none; background: transparent; font: inherit; font-size: 15px; color: #2a1f3a; padding: 4px 6px; }
+.quick-chat button { border: none; border-radius: 10px; background: #ff3b5c; color: #fff; font-weight: 700; padding: 4px 12px; cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { .radial-btn { animation: none; } }

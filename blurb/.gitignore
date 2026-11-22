@@ -1,0 +1,15 @@
+node_modules/
+dist/
+out/
+release/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+server-data/
+scripts/out/
+
+# The parent repo ignores anything named "test"; Blurb keeps its tests.
+!test/
+!**/test/

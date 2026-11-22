@@ -1,0 +1,33 @@
+{
+  "name": "blurb",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Blurb \u2014 an AI desktop pet with a little world, a desktop overlay mode, and a live fan viewer.",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev -w @blurb/server",
+    "dev:web": "npm run dev -w @blurb/web",
+    "dev:desktop": "npm run dev -w @blurb/desktop",
+    "headless": "tsx scripts/headless-pet.ts",
+    "build": "npm run build -w @blurb/web && npm run build -w @blurb/server && npm run build -w @blurb/desktop",
+    "typecheck": "tsc -p packages/shared && tsc -p packages/engine && tsc -p packages/render && tsc -p packages/llm && tsc -p packages/host && tsc -p packages/server && tsc -p packages/web && tsc -p packages/desktop",
+    "test": "vitest run",
+    "sprites": "tsx scripts/render-sprites.ts",
+    "icons": "tsx scripts/make-icons.ts",
+    "build:desktop": "npm run build -w @blurb/desktop"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "pngjs": "^7.0.0",
+    "@types/pngjs": "^6.0.5",
+    "tsx": "^4.20.0",
+    "typescript": "5.9.3",
+    "vitest": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=20.18"
+  }
+}
